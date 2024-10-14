@@ -6,10 +6,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.textContainer}>
-        <Text>
-          My name is Bryium Onyancha. I work in Google Kenya as a software
-          engineer. Happy.{" "}
-        </Text>
+        <Text>Current Weather. </Text>
       </View>
     </SafeAreaView>
   );
@@ -21,6 +18,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   textContainer: {
+    flex: 1,
     backgroundColor: "pink",
     padding: 10,
   },
