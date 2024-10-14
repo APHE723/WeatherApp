@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: "pink",
     padding: 10,
     alignItems: "center",
+    justifyContent: "center",
   },
   temp: {
     color: "black",
@@ -52,6 +53,8 @@ const styles = StyleSheet.create({
   bodyWrapper: {
     justifyContent: "flex-end",
     alignItems: "flex-start",
+    paddingLeft: 25,
+    marginBottom: 40,
   },
   description: {
     fontSize: 48,
