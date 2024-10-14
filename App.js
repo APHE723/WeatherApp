@@ -13,6 +13,10 @@ const App = () => {
           <Text style={styles.highLow}>Low: 6</Text>
         </View>
       </View>
+      <View style={styles.bodyWrapper}>
+        <Text style={styles.description}>It's sunny</Text>
+        <Text style={styles.message}>It's perfect t-shirt weather</Text>
+      </View>
     </SafeAreaView>
   );
 };
@@ -20,7 +24,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "pink",
   },
   textContainer: {
     flex: 1,
@@ -42,6 +46,16 @@ const styles = StyleSheet.create({
   },
   highLowWrapper: {
     flexDirection: "row",
+  },
+  bodyWrapper: {
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+  },
+  description: {
+    fontSize: 48,
+  },
+  message: {
+    fontSize: 30,
   },
 });
 
