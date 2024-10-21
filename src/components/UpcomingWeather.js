@@ -38,7 +38,16 @@ const DATA = [
       "1h": 0.13
     },
 ]
-
+const Item = (props) => {
+  const { dt_text, min, max, condition} = props
+  return (
+    <View>
+      <Text>{dt_text}</Text>
+      <Text>{min}</Text>
+      <Text>{max}</Text>
+    </View>
+  )
+}
 const UpcomingWeather = () => {
   return (
     <SafeAreaView style={styles.container}>
