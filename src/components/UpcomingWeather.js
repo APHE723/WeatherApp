@@ -80,12 +80,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
-  item: {
-    backgroundColor: "#333",
-    padding: 15,
-    marginVertical: 10,
-    borderRadius: 10,
-  },
 });
 
 export default UpcomingWeather;
