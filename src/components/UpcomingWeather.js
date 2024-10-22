@@ -127,12 +127,14 @@ const WeatherItem = ({ dt, min, max, condition }) => {
   return (
     <View style={styles.item}>
       <Feather name={"sun"} size={50} color={"white"} />
-      <Text style={styles.date}>
-        Date: {new Date(dt * 1000).toLocaleDateString()}
-      </Text>
-      <Text>Condition: {condition}</Text>
-      <Text style={styles.temp}>Min Temp: {min}°K</Text>
-      <Text styles={styles.temp}>Max Temp: {max}°K</Text>
+      <View style={styles.details}>
+        <Text style={styles.date}>
+          Date: {new Date(dt * 1000).toLocaleDateString()}
+        </Text>
+        <Text>Condition: {condition}</Text>
+        <Text style={styles.temp}>Min Temp: {min}°K</Text>
+        <Text style={styles.temp}>Max Temp: {max}°K</Text>
+      </View>
     </View>
   );
 };
@@ -149,7 +151,7 @@ const UpcomingWeather = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Upcoming Weather</Text>
+      <Text style={styles.title}>Upcoming Weather</Text>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -171,18 +173,28 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     flexDirection: "row",
-    justifyContent: "space-around",
     alignItems: "center",
-    borderWidth: 5,
+    borderWidth: 2,
+    borderRadius: 10,
     backgroundColor: "pink",
+  },
+  details: {
+    marginLeft: 20,
   },
   temp: {
     color: "white",
-    fontSize: 20,
+    fontSize: 18,
   },
   date: {
     color: "white",
     fontSize: 15,
+    marginBottom: 5,
+  },
+  title: {
+    color: "white",
+    fontSize: 24,
+    textAlign: "center",
+    marginBottom: 20,
   },
 });
 
