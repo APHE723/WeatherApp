@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, FlatList, View } from "react-native";
+import { StyleSheet, Text, FlatList, View, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 
@@ -161,6 +161,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    marginTop: StatusBar.currentHeight || 0,
+    backgroundColor: "red",
+  },
+  item: {
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    borderWidth: 5,
+    backgroundColor: "pink",
   },
 });
 
