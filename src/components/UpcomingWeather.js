@@ -129,8 +129,8 @@ const WeatherItem = ({ dt, min, max, condition }) => {
       <Feather name={"sun"} size={50} color={"white"} />
       <Text>Date: {new Date(dt * 1000).toLocaleDateString()}</Text>
       <Text>Condition: {condition}</Text>
-      <Text>Min Temp: {min}°K</Text>
-      <Text>Max Temp: {max}°K</Text>
+      <Text style={styles.temp}>Min Temp: {min}°K</Text>
+      <Text styles={styles.temp}>Max Temp: {max}°K</Text>
     </View>
   );
 };
@@ -173,6 +173,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 5,
     backgroundColor: "pink",
+  },
+  temp: {
+    color: "white",
+    fontSize: 20,
   },
 });
 
