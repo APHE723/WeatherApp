@@ -127,7 +127,9 @@ const WeatherItem = ({ dt, min, max, condition }) => {
   return (
     <View style={styles.item}>
       <Feather name={"sun"} size={50} color={"white"} />
-      <Text>Date: {new Date(dt * 1000).toLocaleDateString()}</Text>
+      <Text style={styles.date}>
+        Date: {new Date(dt * 1000).toLocaleDateString()}
+      </Text>
       <Text>Condition: {condition}</Text>
       <Text style={styles.temp}>Min Temp: {min}°K</Text>
       <Text styles={styles.temp}>Max Temp: {max}°K</Text>
@@ -177,6 +179,10 @@ const styles = StyleSheet.create({
   temp: {
     color: "white",
     fontSize: 20,
+  },
+  date: {
+    color: "white",
+    fontSize: 15,
   },
 });
 
