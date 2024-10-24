@@ -159,6 +159,7 @@ const UpcomingWeather = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
+        // eslint-disable-next-line no-undef
         source={require("../../assets/cloud.jpg")}
         style={styles.image}
       >
@@ -179,7 +180,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: "red",
+    backgroundColor: "#d1d1d1",
   },
   item: {
     padding: 20,
@@ -210,8 +211,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   image: {
-    height: 100,
-    width: 100,
+    flex: 1,
   },
 });
 
