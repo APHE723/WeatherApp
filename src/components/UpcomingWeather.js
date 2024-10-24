@@ -61,7 +61,8 @@ const DATA = [
       sea_level: 1015,
       grnd_level: 932,
       humidity: 53,
-      temp_kf: 0.11,
+      temp_kf: 0.11,console.log(DATA);
+console
     },
     weather: [
       {
