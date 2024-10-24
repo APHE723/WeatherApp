@@ -159,7 +159,7 @@ const UpcomingWeather = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Upcoming Weather</Text>
-      <Image source={require("../../assets/cloud.jpg")} />
+      <Image source={require("../../assets/cloud.jpg")} style={styles.image} />
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -203,6 +203,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: "center",
     marginBottom: 20,
+  },
+  image: {
+    height: 100,
+    width: 100,
   },
 });
 
