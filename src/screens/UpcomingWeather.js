@@ -3,12 +3,12 @@ import {
   StyleSheet,
   Text,
   FlatList,
-  View,
   StatusBar,
   ImageBackground,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather } from "@expo/vector-icons";
+
+import ListItem from "../components/ListItem";
 
 const DATA = [
   {
@@ -130,25 +130,9 @@ const DATA = [
   },
 ];
 
-const WeatherItem = ({ dt, min, max, condition }) => {
-  return (
-    <View style={styles.item}>
-      <Feather name={"sun"} size={50} color={"white"} />
-      <View style={styles.details}>
-        <Text style={styles.date}>
-          Date: {new Date(dt * 1000).toLocaleDateString()}
-        </Text>
-        <Text>Condition: {condition}</Text>
-        <Text style={styles.temp}>Min Temp: {min}°K</Text>
-        <Text style={styles.temp}>Max Temp: {max}°K</Text>
-      </View>
-    </View>
-  );
-};
-
 const UpcomingWeather = () => {
   const renderItem = ({ item }) => (
-    <WeatherItem
+    <ListItem
       condition={item.weather[0].main}
       dt={item.dt}
       min={item.main.temp_min}
@@ -156,12 +140,14 @@ const UpcomingWeather = () => {
     />
   );
 
+  const { container, image } = styles;
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={container}>
       <ImageBackground
         // eslint-disable-next-line no-undef
         source={require("../../assets/cloud.jpg")}
-        style={styles.image}
+        style={image}
       >
         <Text style={styles.title}>Upcoming Weather</Text>
 
@@ -182,27 +168,8 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
     backgroundColor: "#d1d1d1",
   },
-  item: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    flexDirection: "row",
-    alignItems: "center",
-    borderWidth: 2,
-    borderRadius: 10,
-    backgroundColor: "pink",
-  },
   details: {
     marginLeft: 20,
-  },
-  temp: {
-    color: "white",
-    fontSize: 18,
-  },
-  date: {
-    color: "white",
-    fontSize: 15,
-    marginBottom: 5,
   },
   title: {
     color: "white",
