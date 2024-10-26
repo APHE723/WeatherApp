@@ -7,9 +7,12 @@ const City = () => {
     <SafeAreaView style={styles.container}>
       <ImageBackground
         // eslint-disable-next-line no-undef
-        source={require("../../assets/City.png")}
+        source={require("../../assets/City.jpg")}
         style={styles.imageLayout}
-      ></ImageBackground>
+      >
+        <Text>London</Text>
+        <Text>Uk</Text>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
