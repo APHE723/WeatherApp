@@ -1,6 +1,14 @@
 import React from "react";
-import { Text, StyleSheet, ImageBackground, StatusBar } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  ImageBackground,
+  StatusBar,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Feather } from "@expo/vector-icons";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 const City = () => {
   return (
@@ -11,6 +19,15 @@ const City = () => {
       >
         <Text style={[styles.cityName, styles.cityText]}>London</Text>
         <Text style={[styles.countryName, styles.cityText]}>UK</Text>
+
+        <View style={styles.populationwrapper}>
+          <Feather name={"user"} size={50} color={"red"} />
+          <Text style={styles.populationText}>8000</Text>
+        </View>
+        <View>
+          <Feather />
+          <Text></Text>
+        </View>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -35,6 +52,18 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     color: "white",
+  },
+  populationwrapper: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 30,
+    flexDirection: "row",
+  },
+  populationText: {
+    fontSize: 25,
+    marginLeft: 7.5,
+    color: "red",
+    fontWeight: "bold",
   },
 });
 
