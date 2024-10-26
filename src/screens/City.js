@@ -8,13 +8,12 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import Feather from "@expo/vector-icons/Feather";
 
 const City = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
+        // eslint-disable-next-line no-undef
         source={require("../../assets/City.jpg")}
         style={styles.imageLayout}
       >
