@@ -6,12 +6,11 @@ const City = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
-        // eslint-disable-next-line no-undef
         source={require("../../assets/City.jpg")}
         style={styles.imageLayout}
       >
-        <Text>London</Text>
-        <Text>Uk</Text>
+        <Text style={styles.cityName}>London</Text>
+        <Text style={styles.countryName}>UK</Text>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -24,6 +23,20 @@ const styles = StyleSheet.create({
   },
   imageLayout: {
     flex: 1,
+  },
+  cityName: {
+    fontSize: 40,
+    justifyContent: "center",
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "white",
+  },
+  countryName: {
+    justifyContent: "center",
+    alignSelf: "center",
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "white",
   },
 });
 
