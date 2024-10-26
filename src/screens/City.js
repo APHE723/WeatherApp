@@ -9,8 +9,8 @@ const City = () => {
         source={require("../../assets/City.jpg")}
         style={styles.imageLayout}
       >
-        <Text style={styles.cityName}>London</Text>
-        <Text style={styles.countryName}>UK</Text>
+        <Text style={[styles.cityName, styles.cityText]}>London</Text>
+        <Text style={[styles.countryName, styles.cityText]}>UK</Text>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -26,15 +26,13 @@ const styles = StyleSheet.create({
   },
   cityName: {
     fontSize: 40,
-    justifyContent: "center",
-    textAlign: "center",
-    fontWeight: "bold",
-    color: "white",
   },
   countryName: {
-    justifyContent: "center",
-    alignSelf: "center",
     fontSize: 30,
+  },
+  cityText: {
+    justifyContent: "center",
+    textAlign: "center",
     fontWeight: "bold",
     color: "white",
   },
