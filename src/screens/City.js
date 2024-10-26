@@ -9,6 +9,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import Feather from "@expo/vector-icons/Feather";
 
 const City = () => {
   return (
@@ -24,9 +25,11 @@ const City = () => {
           <Feather name={"user"} size={50} color={"red"} />
           <Text style={styles.populationText}>8000</Text>
         </View>
-        <View>
-          <Feather />
-          <Text></Text>
+        <View style={styles.riseSetWrapper}>
+          <Feather name={"sunrise"} size={50} color={"white"} />
+          <Text style={styles.riseSetText}>10:46:58AM</Text>
+          <Feather name={"sunset"} ize={50} color={"white"} />
+          <Text style={styles.riseSetText}>17:28:15PM</Text>
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -63,6 +66,18 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginLeft: 7.5,
     color: "red",
+    fontWeight: "bold",
+  },
+  riseSetWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    marginTop: 30,
+  },
+
+  riseSetText: {
+    fontSize: 20,
+    color: "white",
     fontWeight: "bold",
   },
 });
