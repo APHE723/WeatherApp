@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const City = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.conatiner}>
       <Text>City</Text>
     </SafeAreaView>
   );
