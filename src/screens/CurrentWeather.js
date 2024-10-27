@@ -6,39 +6,37 @@ import RowText from "../components/RowText";
 
 const CurrentWeather = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.textContainer}>
+    <SafeAreaView style={styles.wrapper}>
+      <View style={styles.Container}>
         <Ionicons name="sunny-outline" size={100} color="black" />
         <Text style={styles.temp}>6</Text>
         <Text style={styles.feels}>Feels like 5</Text>
 
         <RowText
           messageOne={"High: 8"}
-          messsageTwo={"Low: 6"}
+          messageTwo={"Low: 6"} // Fixed typo here
           containerStyles={styles.highLowWrapper}
           messageOneStyles={styles.highLow}
-          messsageTwoStyles={styles.highLow}
+          messageTwoStyles={styles.highLow} // Fixed typo here
         />
-        <Text style={styles.highLow}>High: 8 </Text>
-        <Text style={styles.highLow}>Low: 6</Text>
       </View>
       <RowText
-        messageOne={"It Sunny"}
-        messsageTwo={"It's perfect t-shirt weather"}
+        messageOne={"It’s Sunny"}
+        messageTwo={"It's perfect t-shirt weather"} // Fixed typo here
         containerStyles={styles.bodyWrapper}
         messageOneStyles={styles.description}
-        messsageTwoStyles={styles.message}
+        messageTwoStyles={styles.message} // Fixed typo here
       />
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  wrapper: {
     flex: 1,
     backgroundColor: "pink",
   },
-  textContainer: {
+  Container: {
     flex: 1,
     backgroundColor: "pink",
     padding: 10,
