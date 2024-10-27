@@ -69,10 +69,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   populationwrapper: {
-    alignItems: "center",
     justifyContent: "center",
     marginTop: 30,
-    flexDirection: "row",
   },
   populationText: {
     fontSize: 25,
@@ -80,8 +78,6 @@ const styles = StyleSheet.create({
     color: "red",
   },
   riseSetWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-around",
     marginTop: 30,
   },
@@ -89,6 +85,10 @@ const styles = StyleSheet.create({
   riseSetText: {
     fontSize: 20,
     color: "white",
+  },
+  rowLayout: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 
