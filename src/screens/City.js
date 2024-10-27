@@ -27,7 +27,11 @@ const City = () => {
         <View style={styles.riseSetWrapper}>
           <Feather name={"sunrise"} size={50} color={"white"} />
           <Text style={styles.riseSetText}>10:46:58AM</Text>
-          <Feather name={"sunset"} ize={50} color={"white"} />
+          <Feather
+            name={"sunset"}
+            suppressHighlightingize={50}
+            color={"white"}
+          />
           <Text style={styles.riseSetText}>17:28:15PM</Text>
         </View>
       </ImageBackground>
