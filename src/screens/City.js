@@ -20,13 +20,14 @@ const City = () => {
     populationText,
     riseSetWrapper,
     riseSetText,
+    imageLayout,
   } = styles;
   return (
     <SafeAreaView style={container}>
       <ImageBackground
         // eslint-disable-next-line no-undef
         source={require("../../assets/City.jpg")}
-        style={styles.imageLayout}
+        style={imageLayout}
       >
         <Text style={[cityName, cityText]}>London</Text>
         <Text style={[countryName, styles.cityText]}>UK</Text>
