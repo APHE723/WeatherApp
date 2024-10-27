@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather } from "@expo/vector-icons";
+
 import IconText from "../components/IconText";
 
 const City = () => {
@@ -21,7 +21,7 @@ const City = () => {
         <Text style={[styles.cityName, styles.cityText]}>London</Text>
         <Text style={[styles.countryName, styles.cityText]}>UK</Text>
 
-        <View style={styles.populationwrapper}>
+        <View style={[styles.populationwrapper, styles.rowLayout]}>
           <IconText
             iconName={"user"}
             iconColor={"red"}
@@ -29,7 +29,7 @@ const City = () => {
             bodyTextStyles={styles.populationText}
           />
         </View>
-        <View style={styles.riseSetWrapper}>
+        <View style={[styles.riseSetWrapper, styles.rowLayout]}>
           <IconText
             iconName={"sunrise"}
             iconColor={"white"}
