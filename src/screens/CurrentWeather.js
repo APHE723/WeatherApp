@@ -14,18 +14,18 @@ const CurrentWeather = () => {
 
         <RowText
           messageOne={"High: 8"}
-          messageTwo={"Low: 6"} // Fixed typo here
+          messageTwo={"Low: 6"}
           containerStyles={styles.highLowWrapper}
           messageOneStyles={styles.highLow}
-          messageTwoStyles={styles.highLow} // Fixed typo here
+          messageTwoStyles={styles.highLow}
         />
       </View>
       <RowText
         messageOne={"It’s Sunny"}
-        messageTwo={"It's perfect t-shirt weather"} // Fixed typo here
+        messageTwo={"It's perfect t-shirt weather"}
         containerStyles={styles.bodyWrapper}
         messageOneStyles={styles.description}
-        messageTwoStyles={styles.message} // Fixed typo here
+        messageTwoStyles={styles.message}
       />
     </SafeAreaView>
   );
