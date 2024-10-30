@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    marginTop: -34,
+    marginTop: ,
   },
 });
 
