@@ -16,12 +16,13 @@ const City = () => {
     cityName,
     cityText,
     countryName,
-    populationwrapper,
+    populationWrapper,
     populationText,
     riseSetWrapper,
     riseSetText,
     imageLayout,
   } = styles;
+
   return (
     <SafeAreaView style={container}>
       <ImageBackground
@@ -30,27 +31,27 @@ const City = () => {
         style={imageLayout}
       >
         <Text style={[cityName, cityText]}>London</Text>
-        <Text style={[countryName, styles.cityText]}>UK</Text>
+        <Text style={[countryName, cityText]}>UK</Text>
 
-        <View style={[populationwrapper, styles.rowLayout]}>
+        <View style={[populationWrapper, styles.rowLayout]}>
           <IconText
-            iconName={"user"}
-            iconColor={"red"}
-            bodyText={"8000"}
+            iconName="user"
+            iconColor="red"
+            bodyText="8000"
             bodyTextStyles={populationText}
           />
         </View>
         <View style={[riseSetWrapper, styles.rowLayout]}>
           <IconText
-            iconName={"sunrise"}
-            iconColor={"white"}
-            bodyText={"10:46:58AM"}
+            iconName="sunrise"
+            iconColor="white"
+            bodyText="10:46:58 AM"
             bodyTextStyles={riseSetText}
           />
           <IconText
-            iconName={"sunset"}
-            iconColor={"white"}
-            bodyText={"17:28:15PM"}
+            iconName="sunset"
+            iconColor="white"
+            bodyText="17:28:15 PM"
             bodyTextStyles={riseSetText}
           />
         </View>
@@ -62,10 +63,10 @@ const City = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
   },
   imageLayout: {
     flex: 1,
+    marginTop: -34,
   },
   cityName: {
     fontSize: 40,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
   },
-  populationwrapper: {
+  populationWrapper: {
     justifyContent: "center",
     marginTop: 30,
   },
@@ -92,7 +93,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     marginTop: 30,
   },
-
   riseSetText: {
     fontSize: 20,
     color: "white",

@@ -148,6 +148,7 @@ const UpcomingWeather = () => {
         // eslint-disable-next-line no-undef
         source={require("../../assets/cloud.jpg")}
         style={image}
+        resizeMode="cover"
       >
         <Text style={styles.title}>Upcoming Weather</Text>
 
@@ -164,9 +165,7 @@ const UpcomingWeather = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: "#d1d1d1",
+    backgroundColor: "royalblue",
   },
   details: {
     marginLeft: 20,
@@ -179,6 +178,7 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
+    marginTop: -34,
   },
 });
 

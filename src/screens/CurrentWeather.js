@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: "pink",
+    
   },
   Container: {
     flex: 1,
