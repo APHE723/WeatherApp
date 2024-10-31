@@ -11,7 +11,12 @@ const Tab = createBottomTabNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarInactiveTintColor: "tomato",
+          tabBarActiveTintColor: "grey",
+        }}
+      >
         <Tab.Screen name={"Current"} component={CurrentWeather} />
         <Tab.Screen name={"Upcoming"} component={UpcomingWeather} />
         <Tab.Screen name={"City"} component={City} />
