@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import RowText from "../components/RowText";
+import { WeatherType } from "../utilities/weatherType";
 
 const CurrentWeather = () => {
   return (
@@ -22,7 +23,7 @@ const CurrentWeather = () => {
       </View>
       <RowText
         messageOne={"It’s Sunny"}
-        messageTwo={"It's perfect t-shirt weather"}
+        messageTwo={WeatherType["Clear"].message}
         containerStyles={styles.bodyWrapper}
         messageOneStyles={styles.description}
         messageTwoStyles={styles.message}
@@ -35,7 +36,6 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: "pink",
-    
   },
   Container: {
     flex: 1,
