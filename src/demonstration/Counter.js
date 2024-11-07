@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text, Button, ImageBackground } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
 
 const Counter = () => {
-  let count = 0;
+  const [count, setCount] = useState {0}
 
   return (
     <View style={styles.container}>
@@ -10,12 +10,13 @@ const Counter = () => {
       <Button
         color="red"
         title="Increase the count"
-        onPress={() => count + 1}
+        onPress={() => setCount(count + 1)  
+          }
       />
       <Button
         color="green"
         title="Decrease the count"
-        onPress={() => count - 1}
+        onPress={() => setCount(count -1)}
       />
     </View>
   );
@@ -24,12 +25,12 @@ const Counter = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    ImageBackground: "orange",
+    backgroundColor: "orange",
   },
   title: {
     alignSelf: "center",
-    fontsize: 25,
-    marginTop: 25,
+    fontSize: 25,
+    marginTop: 40,
   },
 });
 
