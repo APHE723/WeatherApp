@@ -14,13 +14,14 @@ const Tabs = () => {
         tabBarInactiveTintColor: "grey",
         tabBarActiveTintColor: "tomato",
         tabBarStyle: {
-          backgroundColor: " lightblue",
+          backgroundColor: "lightblue",
         },
         headerStyle: {
           backgroundColor: "lightblue",
         },
         headerTitleStyle: {
-          fontweight: "bold",
+          fontWeight: "bold",
+          fontsize: 25,
           color: "tomato",
         },
       }}
