@@ -6,27 +6,40 @@ import RowText from "../components/RowText";
 import { WeatherType } from "../utilities/weatherType";
 
 const CurrentWeather = () => {
+  // eslint-disable-next-line no-empty-pattern
+  const {
+    wrapper,
+    Container,
+    temp,
+    feels,
+    highLow,
+    highLowWrapper,
+    bodyWrapper,
+    description,
+    message,
+  } = styles;
+
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={styles.Container}>
+    <SafeAreaView style={wrapper}>
+      <View style={Container}>
         <Ionicons name="sunny-outline" size={100} color="black" />
-        <Text style={styles.temp}>6</Text>
-        <Text style={styles.feels}>Feels like 5</Text>
+        <Text style={temp}>6</Text>
+        <Text style={feels}>Feels like 5</Text>
 
         <RowText
           messageOne={"High: 8"}
           messageTwo={"Low: 6"}
-          containerStyles={styles.highLowWrapper}
-          messageOneStyles={styles.highLow}
-          messageTwoStyles={styles.highLow}
+          containerStyles={highLowWrapper}
+          messageOneStyles={highLow}
+          messageTwoStyles={highLow}
         />
       </View>
       <RowText
         messageOne={"It’s Sunny"}
         messageTwo={WeatherType["Clear"].message}
-        containerStyles={styles.bodyWrapper}
-        messageOneStyles={styles.description}
-        messageTwoStyles={styles.message}
+        containerStyles={bodyWrapper}
+        messageOneStyles={description}
+        messageTwoStyles={message}
       />
     </SafeAreaView>
   );
