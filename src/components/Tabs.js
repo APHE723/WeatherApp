@@ -13,6 +13,16 @@ const Tabs = () => {
       screenOptions={{
         tabBarInactiveTintColor: "grey",
         tabBarActiveTintColor: "tomato",
+        tabBarStyle: {
+          backgroundColor: " lightblue",
+        },
+        headerStyle: {
+          backgroundColor: "lightblue",
+        },
+        headerTitleStyle: {
+          fontweight: "bold",
+          color: "tomato",
+        },
       }}
     >
       <Tab.Screen
