@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Our count value is ${count}");
+  });
 
   return (
     <View style={styles.container}>
