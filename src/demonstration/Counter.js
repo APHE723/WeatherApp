@@ -21,6 +21,16 @@ const Counter = () => {
         title="Decrease the count"
         onPress={() => setCount(count - 1)}
       />
+      <Button
+        color="red"
+        title="Increase the count"
+        onPress={() => setCount(count + 1)}
+      />
+      <Button
+        color="green"
+        title="Decrease the count"
+        onPress={() => setCount(count - 1)}
+      />
     </View>
   );
 };
