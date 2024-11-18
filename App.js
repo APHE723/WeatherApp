@@ -8,19 +8,20 @@ import { WEATHER_API_KEY } from "@env";
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [location, setLocation] = useState(null);
   const [error, setError] = useState();
-  const [Weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState([]);
+  const [lat, setLat] = useState([]);
+  const [lon, setLon] = useState([]);
 
   const fetchWeatherData = async () => {
     try {
       const res = await fetch(
-        "http://api.openweathermap.org/data/2.5/forecast?lat=${location.coords.latitude}&lon=${location.coords.longitude}&appid=${WEATHER_API_KEY}"
+        "http://api.openweathermap.org/data/2.5/forecast?lat=${llat}&lon=${lon}&appid=${WEATHER_API_KEY}"
       );
       const data = await res.json();
       setWeather(data);
       setLoading(false);
-    } catch (error) {
+    } catch (e) {
       setError("could not fetch weather");
     } finally {
       setLoading(false);
@@ -36,11 +37,12 @@ const App = () => {
         return;
       }
       let location = await Location.getCurrentPositionAsync({});
-      setLocation(location);
+      setLat(location.coords.latitude);
+      setLon(location.coords.longitude);
       setLoading(false);
       await fetchWeatherData();
     })();
-  }, []);
+  }, [lat, lon]);
 
   if (loading) {
     return (
@@ -50,8 +52,8 @@ const App = () => {
     );
   }
 
-  if (location) {
-    console.log(location);
+  if (weather) {
+    console.log(weather);
   }
 
   return (
