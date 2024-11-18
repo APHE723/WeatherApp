@@ -14,7 +14,7 @@ const App = () => {
 
   const fetchWeatherData = async () => {
     const res = await fetch(
-      "http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}"
+      "http://api.openweathermap.org/data/2.5/forecast?lat=${location.coords.latitude}&lon=${location.coords.longitude}&appid=${WEATHER_API_KEY}"
     );
     const data = await res.json();
     setWeather(data);
