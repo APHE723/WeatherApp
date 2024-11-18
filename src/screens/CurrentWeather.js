@@ -6,7 +6,6 @@ import RowText from "../components/RowText";
 import { WeatherType } from "../utilities/weatherType";
 
 const CurrentWeather = ({ weatherData }) => {
-  // eslint-disable-next-line no-empty-pattern
   const {
     wrapper,
     Container,
@@ -18,31 +17,41 @@ const CurrentWeather = ({ weatherData }) => {
     description,
     message,
   } = styles;
+
   const {
     main: { temp, feels_like, temp_max, temp_min },
     weather,
   } = weatherData;
 
-  const WeatherCondition
+  const WeatherCondition = weather[0].main;
 
   return (
-    <SafeAreaView style={wrapper}>
+    <SafeAreaView
+      style={[
+        wrapper,
+        { backgroundColor: WeatherType[WeatherCondition]?.backgroundColor },
+      ]}
+    >
       <View style={Container}>
-        <Ionicons name="sunny-outline" size={100} color="black" />
-        <Text style={tempStyles}>6</Text>
-        <Text style={feels}>Feels like 5</Text>
+        <Ionicons
+          name={WeatherType[WeatherCondition]?.icon}
+          size={100}
+          color="white"
+        />
+        <Text style={tempStyles}>{temp}°C</Text>
+        <Text style={feels}>{`Feels like: ${feels_like}°C`}</Text>
 
         <RowText
-          messageOne={"High: 8"}
-          messageTwo={"Low: 6"}
+          messageOne={`High: ${temp_max}°C`}
+          messageTwo={`Low: ${temp_min}°C`}
           containerStyles={highLowWrapper}
           messageOneStyles={highLow}
           messageTwoStyles={highLow}
         />
       </View>
       <RowText
-        messageOne={"It’s Sunny"}
-        messageTwo={WeatherType["Clear"].message}
+        messageOne={weather[0].description}
+        messageTwo={WeatherType[WeatherCondition]?.message}
         containerStyles={bodyWrapper}
         messageOneStyles={description}
         messageTwoStyles={message}
