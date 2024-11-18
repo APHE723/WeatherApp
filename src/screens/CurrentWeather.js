@@ -10,7 +10,7 @@ const CurrentWeather = ({ weatherData }) => {
   const {
     wrapper,
     Container,
-    temp,
+    tempStyles,
     feels,
     highLow,
     highLowWrapper,
@@ -18,13 +18,18 @@ const CurrentWeather = ({ weatherData }) => {
     description,
     message,
   } = styles;
-  console.log(weatherData);
+  const {
+    main: { temp, feels_like, temp_max, temp_min },
+    weather,
+  } = weatherData;
+
+  const WeatherCondition
 
   return (
     <SafeAreaView style={wrapper}>
       <View style={Container}>
         <Ionicons name="sunny-outline" size={100} color="black" />
-        <Text style={temp}>6</Text>
+        <Text style={tempStyles}>6</Text>
         <Text style={feels}>Feels like 5</Text>
 
         <RowText
@@ -58,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  temp: {
+  tempStyles: {
     color: "black",
     fontSize: 48,
   },
