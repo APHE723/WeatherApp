@@ -5,7 +5,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import RowText from "../components/RowText";
 import { WeatherType } from "../utilities/weatherType";
 
-const CurrentWeather = () => {
+const CurrentWeather = ({ weatherData }) => {
   // eslint-disable-next-line no-empty-pattern
   const {
     wrapper,
@@ -18,6 +18,7 @@ const CurrentWeather = () => {
     description,
     message,
   } = styles;
+  console.log(weatherData);
 
   return (
     <SafeAreaView style={wrapper}>
