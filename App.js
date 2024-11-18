@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { View, ActivityIndicator, StyleSheet } from "react-native";
+import { View, ActivityIndicator, StyleSheet, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./src/components/Tabs";
 import * as Location from "expo-location";
 import { WEATHER_API_KEY } from "@env";
 
-// api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
   const [weather, setWeather] = useState([]);
-  const [lat, setLat] = useState([]);
-  const [lon, setLon] = useState([]);
+  const [lat, setLat] = useState(null);
+  const [lon, setLon] = useState(null);
 
   const fetchWeatherData = async () => {
     try {
       const res = await fetch(
-        "http://api.openweathermap.org/data/2.5/forecast?lat=${llat}&lon=${lon}&appid=${WEATHER_API_KEY}"
+        `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`
       );
       const data = await res.json();
+      console.log("Weather Data:", data); // Log the raw weather data
       setWeather(data);
       setLoading(false);
     } catch (e) {
-      setError("could not fetch weather");
-    } finally {
+      console.log("Error fetching weather:", e); // Log any error
+      setError("Could not fetch weather");
       setLoading(false);
     }
   };
@@ -31,18 +31,28 @@ const App = () => {
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
+      console.log("Location permission status:", status); // Log permission status
       if (status !== "granted") {
         setError("Permission to access location was denied");
         setLoading(false);
         return;
       }
       let location = await Location.getCurrentPositionAsync({});
+      console.log("Location:", location); // Log the location data
       setLat(location.coords.latitude);
       setLon(location.coords.longitude);
-      setLoading(false);
-      await fetchWeatherData();
     })();
+  }, []);
+
+  useEffect(() => {
+    if (lat && lon) {
+      fetchWeatherData();
+    }
   }, [lat, lon]);
+
+  useEffect(() => {
+    console.log("Weather state updated:", weather); // Log weather state
+  }, [weather]);
 
   if (loading) {
     return (
@@ -52,8 +62,12 @@ const App = () => {
     );
   }
 
-  if (weather) {
-    console.log(weather);
+  if (error) {
+    return (
+      <View style={styles.container}>
+        <Text>{error}</Text>
+      </View>
+    );
   }
 
   return (
@@ -66,6 +80,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
+    alignItems: "center",
     flex: 1,
   },
 });
