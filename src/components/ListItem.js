@@ -1,21 +1,21 @@
 import React from "react";
+import moment from "moment";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { WeatherType } from "../utilities/weatherType";
 
 const ListItem = (props) => {
-  const { item, date, details, temp } = styles;
+  const { dt_txt, min, max, condition } = props;
+  const { item, dateTextWrapper, date, temp } = styles;
 
   return (
     <View style={item}>
       <Feather name={WeatherType[condition].icon} size={50} color="white" />
-      <View style={details}>
-        <Text style={date}>
-          Date: {new Date(props.dt * 1000).toLocaleDateString()}
-        </Text>
-        <Text>Condition: {props.condition}</Text>
-        <Text style={temp}>{"${Math.round(min)}˚/${Math.round(max)}˚ "} </Text>
+      <View style={dateTextWrapper}>
+        <Text style={date}>{moment(dt_txt).format("dddd")}</Text>
+        <Text style={date}>{moment(dt_txt).format("h:mm:ss a")}</Text>
       </View>
+      <Text style={temp}>{`${Math.round(min)}° / ${Math.round(max)}°`}</Text>
     </View>
   );
 };
@@ -26,23 +26,21 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     flexDirection: "row",
+    justifyContent: "space-around",
     alignItems: "center",
-    borderWidth: 2,
-    borderRadius: 10,
-    backgroundColor: "pink",
-  },
-  details: {
-    marginLeft: 20,
+    borderWidth: 5,
+    backgroundColor: "indianred",
   },
   temp: {
     color: "white",
-    fontSize: 18,
+    fontSize: 20,
   },
   date: {
     color: "white",
     fontSize: 15,
-    marginBottom: 5,
+  },
+  dateTextWrapper: {
+    flexDirection: "column",
   },
 });
-
 export default ListItem;
