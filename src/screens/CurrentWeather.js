@@ -23,7 +23,7 @@ const CurrentWeather = ({ weatherData }) => {
     weather,
   } = weatherData;
 
-  const WeatherCondition = weather[0].main;
+  const WeatherCondition = weather[0]?.main;
 
   return (
     <SafeAreaView
@@ -50,7 +50,7 @@ const CurrentWeather = ({ weatherData }) => {
         />
       </View>
       <RowText
-        messageOne={weather[0].description}
+        messageOne={weather[0]?.description}
         messageTwo={WeatherType[WeatherCondition]?.message}
         containerStyles={bodyWrapper}
         messageOneStyles={description}
@@ -63,7 +63,6 @@ const CurrentWeather = ({ weatherData }) => {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: "pink",
   },
   Container: {
     flex: 1,
@@ -74,10 +73,10 @@ const styles = StyleSheet.create({
   },
   tempStyles: {
     color: "black",
-    fontSize: 48,
+    fontSize: 43,
   },
   feels: {
-    fontSize: 30,
+    fontSize: 25,
     color: "black",
   },
   highLow: {
