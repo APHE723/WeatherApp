@@ -2,6 +2,7 @@ import React from "react";
 import { View, ActivityIndicator, StyleSheet, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./src/components/Tabs";
+import ErrrorItem from "./src/components/ErrorItem";
 import { useGetWeather } from "./src/hooks/useGetWeather";
 
 const App = () => {
@@ -27,7 +28,11 @@ const App = () => {
   if (error) {
     return (
       <View style={styles.container}>
-        <Text>{error}</Text>
+        {loading ? (
+          <ActivityIndicator size={"lrge"} color={"blue"} />
+        ) : (
+          <ErrrorItem />
+        )}
       </View>
     );
   }
