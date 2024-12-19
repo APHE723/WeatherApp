@@ -11,7 +11,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import IconText from "../components/IconText";
 
-const City = (weatherData) => {
+const City = ({ weatherData }) => {
   const {
     container,
     cityName,
@@ -23,11 +23,18 @@ const City = (weatherData) => {
     riseSetText,
     imageLayout,
   } = styles;
-  const { name, country, population, sunrise, sunset } = weatherData;
+
+  const {
+    name = "Unknown City",
+    country = "Unknown Country",
+    population = "N/A",
+    sunrise = 0,
+    sunset = 0,
+  } = weatherData;
+
   return (
     <SafeAreaView style={container}>
       <ImageBackground
-        // eslint-disable-next-line no-undef
         source={require("../../assets/City.jpg")}
         style={imageLayout}
       >
